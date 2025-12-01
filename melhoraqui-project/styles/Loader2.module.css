@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.title .blue {
+  color: #1D0B82;
+}
+
+.title .orange {
+  color: #C3600A;
+}
+
+.subtitle {
+  font-size: 16px;
+  text-align: center;
+  color: #C3600A;
+  margin-bottom: 30px;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.featureTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1D0B82;
+}
+
+.featureSubtitle {
+  font-size: 14px;
+  color: #C3600A;
+}
+
+.bottomText {
+  font-size: 14px;
+  text-align: center;
+  color: #C3600A;
+  margin-top: 30px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Centraliza verticalmente */
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 26px 16px 90px; 
+  }
+  .logo {
+    width: 120px;
+  }
+}
+
+@media (max-height: 650px) {
+  .container {
+    padding-bottom: 110px; 
+  }
+}
