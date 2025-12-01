@@ -1,13 +1,15 @@
-
-.splash1 {
+.wrapper {
+  position: fixed;
+  inset: 0;             
   width: 100vw;
   height: 100vh;
-  background-color: #C3600A; 
+  margin: 0;
+  padding: 0;
+  background: #C3600A;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .card {
   display: flex;
@@ -16,13 +18,11 @@
   align-items: center;
 }
 
-
 .logo {
   width: 160px;
   height: auto;
   object-fit: contain;
 }
-
 
 .brand {
   margin-top: 16px;
@@ -31,4 +31,3 @@
   font-family: "Montserrat Alternates", sans-serif;
   color: #fff;
 }
-
