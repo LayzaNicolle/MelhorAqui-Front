@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function CadastroMorador() {
   const router = useRouter();
 
-  // Estados com persistência no localStorage
+  
   const [formData, setFormData] = useState({
     nome: '',
     nascimento: '',
