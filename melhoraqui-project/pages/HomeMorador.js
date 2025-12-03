@@ -22,9 +22,6 @@ export default function Morador() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <button className={styles.backButton}>
-          <img src="/assets/back-icon-white.svg" alt="Voltar" />
-        </button>
         <h1 className={styles.title}>MelhorAqui</h1>
       </header>
       <h1 className={styles.greeting}>Olá, {userName}</h1>

@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import styles from '../styles/BuscarBairros.module.css';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'; 
 
 export default function BuscarBairros() {
+  const router = useRouter(); 
+
   const [bairros, setBairros] = useState([]); 
   const [ideias, setIdeias] = useState([]);   
   const [busca, setBusca] = useState('');
@@ -31,9 +34,12 @@ export default function BuscarBairros() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <button className={styles.backButton}>
-          <img src="/assets/back-icon-white.svg" alt="Voltar" />
-        </button>
+         <button
+      className={styles.backButton}
+      onClick={() => router.push("/HomeMorador")}
+    >
+      <img src="/assets/back-icon-white.svg" alt="Voltar" />
+    </button>
         <h1 className={styles.title}>MelhorAqui</h1>
         <div className={styles.headerSpacer}></div>
       </header>
@@ -41,7 +47,12 @@ export default function BuscarBairros() {
       <nav className={styles.navbar}>
         <button className={styles.navItem}>Propostas</button>
         <button className={styles.navItem}>Solicitações</button>
-        <button className={styles.navItem}>Notificações</button>
+        <button
+          className={styles.navItem}
+          onClick={() => router.push("/Notificacoes")}
+        >
+          Notificações
+        </button>
       </nav>
 
       <section className={styles.filterSection}>
@@ -61,6 +72,7 @@ export default function BuscarBairros() {
           >
             Todos
           </button>
+
           {bairros.map((bairro) => (
             <button 
               key={bairro.id} 
@@ -103,11 +115,13 @@ export default function BuscarBairros() {
             <img src="/assets/search-icon.svg" alt="Buscar" />
           </button>
         </Link>
+
         <Link href="/PerfilMorador">
           <button className={styles.footerButton}>
             <img src="/assets/profile-icon.svg" alt="Perfil" />
           </button>
         </Link>
+
         <Link href="/Notificacoes">
           <button className={styles.footerButton}>
             <img src="/assets/notification-icon.svg" alt="Notificações" />

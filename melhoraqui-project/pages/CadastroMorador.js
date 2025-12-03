@@ -89,7 +89,6 @@ export default function CadastroMorador() {
         <label className={styles.label}>Tipo de deficiência</label>
         <input 
           type="text" 
-          placeholder="Ex: Deficiência auditiva" 
           className={styles.input} 
           value={formData.deficiencia}
           onChange={(e) => updateField('deficiencia', e.target.value)}

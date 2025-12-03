@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import styles from '../styles/PerfilMorador.module.css';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'; 
 
 export default function PerfilMorador() {
+  const router = useRouter(); 
+
   const [usuario, setUsuario] = useState({
     nome: 'Carregando...',
     email: '...',
@@ -25,9 +28,13 @@ export default function PerfilMorador() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <button className={styles.backButton}>
+        <button
+          className={styles.backButton}
+          onClick={() => router.push("/HomeMorador")} 
+        >
           <img src="/assets/back-icon-white.svg" alt="Voltar" />
         </button>
+
         <h1 className={styles.title}>MelhorAqui</h1>
         <div className={styles.headerSpacer}></div>
       </header>
@@ -43,10 +50,12 @@ export default function PerfilMorador() {
             <img src="/assets/email-icon.svg" alt="Email" className={styles.contactIcon} />
             <p>{usuario.email}</p>
           </div>
+
           <div className={styles.contactItem}>
             <img src="/assets/phone-icon.svg" alt="Telefone" className={styles.contactIcon} />
             <p>{usuario.telefone || '(Sem telefone cadastrado)'}</p>
           </div>
+
           <div className={styles.contactItem}>
             <img src="/assets/location-icon.svg" alt="Localização" className={styles.contactIcon} />
             <p>{usuario.cidade}</p>
@@ -60,11 +69,13 @@ export default function PerfilMorador() {
             <img src="/assets/search-icon.svg" alt="Buscar" />
           </button>
         </Link>
+
         <Link href="/PerfilMorador">
           <button className={`${styles.footerButton} ${styles.active}`}>
             <img src="/assets/profile-icon.svg" alt="Perfil" />
           </button>
         </Link>
+
         <Link href="/Notificacoes">
           <button className={styles.footerButton}>
             <img src="/assets/notification-icon.svg" alt="Notificações" />
