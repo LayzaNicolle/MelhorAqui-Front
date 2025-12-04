@@ -13,10 +13,12 @@ export default function BuscarBairros() {
   useEffect(() => {
     async function carregarDados() {
       try {
-        const resBairros = await fetch('http://localhost:9234/bairros');
+        const resBairros = await fetch('api/bairros');
+        //const resBairros = await fetch('http://localhost:9234/bairros');
         if (resBairros.ok) setBairros(await resBairros.json());
 
-        const resIdeias = await fetch('http://localhost:9234/ideias');
+        const resIdeias = await fetch('api/ideias');
+        // const resIdeias = await fetch('http://localhost:9234/ideias');
         if (resIdeias.ok) setIdeias(await resIdeias.json());
 
       } catch (error) {
