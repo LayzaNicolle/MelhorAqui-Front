@@ -1,30 +1,27 @@
 import Link from 'next/link';
 import styles from '../styles/HomeMorador.module.css';
 import { useState, useEffect } from 'react';
+import { useAuthStore } from '../store/useAuthStore'; 
 
 export default function Morador() {
-  const [userName, setUserName] = useState('Morador');
+  const { usuario } = useAuthStore();
+  
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const dadosSalvos = localStorage.getItem('usuarioLogado');
-    if (dadosSalvos) {
-      try {
-        const usuario = JSON.parse(dadosSalvos);
-        if (usuario.nome) {
-          setUserName(usuario.nome.split(' ')[0]);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
+    setIsClient(true);
   }, []);
+
+  const primeiroNome = usuario?.nome ? usuario.nome.split(' ')[0] : 'Morador';
+
+  if (!isClient) return null; 
 
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>MelhorAqui</h1>
       </header>
-      <h1 className={styles.greeting}>Olá, {userName}</h1>
+      <h1 className={styles.greeting}>Olá, {primeiroNome}</h1>
 
       <h2 className={styles.servicesTitle}>Nossos serviços</h2>
       <div className={styles.servicesGrid}>
