@@ -9,7 +9,7 @@ export default function Notificacoes() {
     async function carregarDados() {
       try {
         // Como não tem "Notificação" no back, buscamos as Ideias para mostrar o status delas
-        const response = await fetch('http://localhost:8080/ideias');
+        const response = await fetch('http://localhost:9234/ideias');
         
         if (response.ok) {
           const data = await response.json();

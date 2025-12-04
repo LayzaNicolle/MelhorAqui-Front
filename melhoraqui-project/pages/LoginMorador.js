@@ -11,35 +11,30 @@ export default function Login() {
   const [loading, setLoading] = useState(false)
 
   async function handleLogin() {
-    setError('') 
+    setError('')
     setLoading(true)
 
     try {
-      const response = await fetch('http://localhost:8080/usuarios/login', {
+      const response = await fetch('http://localhost:9234/usuarios/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
       })
 
       if (response.ok) {
-        const dadosUsuario = await response.json()
-      
-        localStorage.setItem('usuarioLogado', JSON.stringify(dadosUsuario))
+        const usuario = await response.json()
+
+        localStorage.setItem('usuarioLogado', JSON.stringify(usuario))
+
         router.push('/HomeMorador')
-        
       } else {
-        const msgErro = await response.text();
-        setError(msgErro || 'E-mail ou senha incorretos')
+        const msg = await response.text()
+        setError(msg || 'E-mail ou senha incorretos')
         setLoading(false)
       }
+
     } catch (err) {
-      console.error(err)
-      setError('Erro de conexão com o servidor.')
+      setError('Erro ao conectar ao servidor.')
       setLoading(false)
     }
   }
