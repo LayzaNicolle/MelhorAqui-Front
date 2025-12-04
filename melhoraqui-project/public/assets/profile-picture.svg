@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <!-- Círculo de fundo -->
+  <circle cx="40" cy="40" r="40" fill="#C3600A"/>
+  <!-- Cabeça da pessoa -->
+  <circle cx="40" cy="30" r="14" fill="#FFFFFF"/>
+  <!-- Corpo da pessoa -->
+  <ellipse cx="40" cy="65" rx="22" ry="18" fill="#FFFFFF"/>
+</svg>
