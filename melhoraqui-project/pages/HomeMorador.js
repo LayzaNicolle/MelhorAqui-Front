@@ -31,12 +31,13 @@ export default function Morador() {
             <p>Buscar bairros</p>
           </div>
         </Link>
-        <Link href="/Andamento">
-          <div className={styles.serviceCard}>
-            <img src="/assets/progress-icon.svg" alt="Andamento" className={styles.icon} />
-            <p>Andamento</p>
-          </div>
-        </Link>
+        <Link href="/Solicitacoes">
+  <div className={styles.serviceCard}>
+    <img src="/assets/progress-icon.svg" alt="Solicitações" className={styles.icon} />
+    <p>Andamento</p>
+  </div>
+</Link>
+
         <Link href="/PerfilMorador">
           <div className={styles.serviceCard}>
             <img src="/assets/profile-icon.svg" alt="Perfil" className={styles.icon} />
